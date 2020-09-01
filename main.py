@@ -4,12 +4,13 @@ import requests
 import re
 import sys
 import os
+import lxml
 function={"http://www.cpbl.com.tw/":{"news":'^/news/view/'}}
 class Crawler():
     def __init__(self):
         self.session=requests.session()
-        self.headers={'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N)'
-                'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Mobile Safari/537.36',
+        self.headers={'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X)'
+                'AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobilr/11D257',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;'
                 'q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
                 }
@@ -24,24 +25,32 @@ class Crawler():
         #print(url)
         html=urlopen(url)
         page=self.setforchinise(html.read().decode('utf-8'))
+        new_page=page.replace('<br />','')
         #print(page)
-        
-        bs=BeautifulSoup(page,'html.parser')
+        #print(new_page)
+        #print(new_page)
+        bs=BeautifulSoup(new_page,'html.parser')
+        title=bs.find('div',{'class':'news_title'})
+        pos=title.find("</span>")
+        print('title',title[pos:])
         l=bs.find_all('p')
+        print('l:')
         for text in l:
             print(text.string)
+        print('')
+        os.system("pause")
     def parse(self,url,chose):
-        print(url)
+        #print(url)
         html=urlopen(url)
         page=self.setforchinise(html.read().decode('utf-8'))
-        print(page)
+        #print(page)
         limit=function[url][chose]
         self.bs=BeautifulSoup(page,'html.parser')
         l=self.findhref('a',limit)
         if chose=="news":
             for tag in l:
                 self.news(str(url+tag['href']))
-                print(tag.string,':',)
+                #print(tag.string,':',)
 crawler=Crawler()
 crawler.parse("http://www.cpbl.com.tw/","news")
 #print(bs.prettify())
