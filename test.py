@@ -1,32 +1,12 @@
-#coding=utf-8
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 import re
 import sys
 import os
-import pdfkit
-import pdfcrowd
-import sys
-
+import lxml
 function={"http://www.cpbl.com.tw/":{"news":'^/news/view/'}}
-config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
 class Crawler():
-    def html_to_pdf(self,html,filename):
-        try:
-            print(filename)
-    # create the API client instance
-            filename+='.pdf'
-            client = pdfcrowd.HtmlToPdfClient('demo', 'ce544b6ea52a5621fb9d55f8b542d14d')
-            client.setPageSize(u'A2')
-            client.setHeaderHeight(u'0.0in')
-            client.setNoMargins(True)
-            # run the conversion and write the result to a file
-            client.convertFileToFile(html,filename)
-        except pdfcrowd.Error as why:
-            # report the error
-            sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
-            raise
     def __init__(self):
         self.session=requests.session()
         self.headers={'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X)'
@@ -40,21 +20,17 @@ class Crawler():
         return web
     def findhref(self,tag,limit):
         return self.bs.find_all(tag,{'href':re.compile(limit)})
-    def news(self,url,filename):
+    def news(self,url):
         #os.system("cls")
         #print(url)
         html=urlopen(url)
-        page=html.read()
-        bs=BeautifulSoup(page,'html.parser')
-        title=bs.find('div',{'class':'news_title'})
-        time=title.find('span').string
+        page=str(html.read())#self.setforchinise(html.read().decode('utf-8'))
         #print(page)
-        f=open('new.html',"wb")
-        f.write(page)
+        f=open('new.html',"w")
+        bs=BeautifulSoup(page,'html.parser')
+        f.write(bs.text)
         f.close()
-        fail=self.html_to_pdf('new.html',time+filename)
-        if fail==True:
-            return
+        os.system("pause")
     def parse(self,url,chose):
         #print(url)
         html=urlopen(url)
@@ -65,8 +41,7 @@ class Crawler():
         l=self.findhref('a',limit)
         if chose=="news":
             for tag in l:
-                filename=tag.string.replace(' ','').replace(':','比')
-                self.news(str(url+tag['href']),filename)
+                self.news(str(url+tag['href']))
                 #print(tag.string,':',)
 crawler=Crawler()
 crawler.parse("http://www.cpbl.com.tw/","news")

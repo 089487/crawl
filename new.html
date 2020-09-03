@@ -1,0 +1,744 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- meta -->
+<!-- header -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://cpbl-elta.cdn.hinet.net/web/css/style.css?v=20161021" rel="stylesheet" type="text/css" /><!--CSS-->
+<link rel="shortcut icon" href="http://cpbl-elta.cdn.hinet.net/web/images/logo.ico">
+<link rel="stylesheet" type="text/css" href="http://cpbl-elta.cdn.hinet.net/lib/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://cpbl-elta.cdn.hinet.net/lib/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript" src="http://cpbl-elta.cdn.hinet.net/lib/sticky/jquery.sticky.js"></script> <!--20150918-->
+
+
+<!--此為DFP載入廣告程式碼-->
+<script type='text/javascript'>
+  //2017-08-30 替換廣告碼
+  // var googletag = googletag || {};
+  // googletag.cmd = googletag.cmd || [];
+  // (function() {
+  //   var gads = document.createElement('script');
+  //   gads.async = true;
+  //   gads.type = 'text/javascript';
+  //   var useSSL = 'https:' == document.location.protocol;
+  //   gads.src = (useSSL ? 'https:' : 'http:') +
+  //     '//www.googletagservices.com/tag/js/gpt.js';
+  //   var node = document.getElementsByTagName('script')[0];
+  //   node.parentNode.insertBefore(gads, node);
+  // })();
+</script>
+<script>
+   var PREBID_TIMEOUT = 1200;
+ 
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+ 
+   function initAdserver() {
+       if (pbjs.initAdserverSet) return;
+       //load GPT library here
+       (function() {
+           var gads = document.createElement('script');
+           gads.async = true;
+           gads.type = 'text/javascript';
+           var useSSL = 'https:' == document.location.protocol;
+           gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+           var node = document.getElementsByTagName('script')[0];
+           node.parentNode.insertBefore(gads, node);
+       })();
+       pbjs.initAdserverSet = true;
+   };
+ 
+   setTimeout(initAdserver, PREBID_TIMEOUT);
+   var pbjs = pbjs || {};
+   pbjs.que = pbjs.que || [];
+ 
+   // Load the Prebid Javascript Library Async. We recommend loading it immediately after
+   // the initAdserver() and setTimeout functions.
+   (function() {
+       var d = document,
+           pbs = d.createElement("script"),
+           pro = d.location.protocol;
+       pbs.type = "text/javascript";
+       pbs.src = '//cpbl-elta.cdn.hinet.net/lib/c1x/prebid.js';
+       var target = document.getElementsByTagName("head")[0];
+       target.insertBefore(pbs, target.firstChild);
+   })();
+ 
+   pbjs.que.push(function() {
+       var adUnits = [{
+           code: 'div-gpt-ad-1459139503845-3',
+           sizes: [[160, 600], [120, 600]],
+           bids: [{
+               bidder: 'c1x'
+           }]
+       }];
+ 
+       //add the adUnits
+       pbjs.addAdUnits(adUnits);
+       pbjs.bidderSettings = {
+           'c1x': {
+               pixelId: 1236383,
+               siteId: 16745,
+               endpoint: 'https://ht.c1exchange.com/ht',
+               adserverTargeting: [{
+                   key: "hb_bidder",
+                   val: function(bidResponse) {
+                       return bidResponse.bidderCode;
+                   }
+               }, {
+                   key: "hb_adid",
+                   val: function(bidResponse) {
+                       return bidResponse.adId;
+                   }
+               }, {
+                   key: "hb_pb",
+                   val: function(bidResponse) {
+                       return Math.floor(bidResponse.pbLg) + '.00';
+                   }
+               }]
+           }
+       };
+ 
+       pbjs.requestBids({
+           bidsBackHandler: function() {
+               initAdserver();
+           }
+       });
+   });
+</script>
+<script type='text/javascript'>
+	googletag.cmd.push(function () {
+		//googletag.defineSlot('/71024502/cpbl_index_300120_1', [300, 120], 'div-gpt-ad-1410928154883-0').addService(googletag.pubads());
+		//googletag.defineSlot('/71024502/cpbl_index_300120_2', [300, 120], 'div-gpt-ad-1410928154883-1').addService(googletag.pubads());
+		//googletag.defineSlot('/71024502/cpbl_index_300120_3', [300, 120], 'div-gpt-ad-1410928154883-2').addService(googletag.pubads());
+		//googletag.defineSlot('/71024502/cpbl_index_300250_1', [300, 250], 'div-gpt-ad-1410928154883-3').addService(googletag.pubads());
+		//googletag.defineSlot('/71024502/cpbl_index_300600_1', [300, 600], 'div-gpt-ad-1410928154883-4').addService(googletag.pubads());
+		//googletag.defineSlot('/71024502/cpbl_index_600100_1', [600, 100], 'div-gpt-ad-1410928154883-5').addService(googletag.pubads());
+		
+		googletag.defineSlot('/71024502/cpbl_index_600100_1', [600, 100], 'div-gpt-ad-1411007483897-0').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_game_box_72890_1', [728, 90], 'div-gpt-ad-1410934631955-0').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_index_72890_1', [728, 90], 'div-gpt-ad-1410928154883-6').addService(googletag.pubads());
+
+		//r1 r2 l
+		googletag.defineSlot('/71024502/cpbl_index_300250_1', [300, 250], 'div-gpt-ad-1447212876523-0').addService(googletag.pubads());
+    	googletag.defineSlot('/71024502/cpbl_index_300250_2', [300, 250], 'div-gpt-ad-1447212876523-1').addService(googletag.pubads());
+   		googletag.defineSlot('/71024502/cpbl_index_160600_1', [160, 600], 'div-gpt-ad-1447212876523-2').addService(googletag.pubads());
+		//m1 m2
+		googletag.defineSlot('/71024502/cpbl_index_190200_1', [190, 200], 'div-gpt-ad-1447399700307-0').addService(googletag.pubads());
+   		googletag.defineSlot('/71024502/cpbl_index_190200_2', [190, 200], 'div-gpt-ad-1447399700307-1').addService(googletag.pubads());
+		
+		googletag.defineSlot('/71024502/cpbl_index_97090_1', [[728, 90], [970, 90]], 'div-gpt-ad-1459139503845-0').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_index_610100_1', [610, 100], 'div-gpt-ad-1459139503845-1').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_allsite_160600_1', [[160, 600], [120, 600]], 'div-gpt-ad-1459139503845-2').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_allsite_160600_2', [[160, 600], [120, 600]], 'div-gpt-ad-1459139503845-3').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_news_content_336280_1', [[300, 250], [336, 280]], 'div-gpt-ad-1459139503845-4').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_news_content_336280_2', [[300, 250], [336, 280]], 'div-gpt-ad-1459139503845-5').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_schedule_97090_1', [[728, 90], [970, 90]], 'div-gpt-ad-1459139503845-6').addService(googletag.pubads());
+		googletag.defineSlot('/71024502/cpbl_schedule_970250_1', [[728, 90], [970, 90], [970, 250]], 'div-gpt-ad-1459139503845-7').addService(googletag.pubads());
+		pbjs.que.push(function () {
+           pbjs.setTargetingForGPTAsync();
+        });
+		googletag.pubads().enableSingleRequest();
+		googletag.pubads().collapseEmptyDivs();
+		googletag.enableServices();
+
+
+		
+		// googletag.pubads().enableSingleRequest();
+		// googletag.enableServices();
+	});
+</script>
+
+
+
+
+
+
+<meta property="og:title" content="3/22中職開幕戰統一獅新莊棒球場 棒球嘉年華邀請您一起來同樂" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="www.cpbl.com.tw/news/view/11420.html?&news=11420" />
+<meta property="og:image" content="http://cpbl-elta.cdn.hinet.net/upload/news/" />
+<meta property="og:description" content="職棒25年中華職棒開幕戰，下週六(3/22)於新北市新莊棒球場熱鬧登場，將由統一獅擔任主場球隊迎戰義大犀牛。迎接中職開幕戰盛會，統一獅賽前也舉辦一系列熱鬧活動，邀請球迷朋友一起來共襄盛舉，享受歡樂棒球。
+
+統一獅為了提供球迷多元賞球樂趣，推出一系列吃喝玩樂活動盡在新莊棒球場，絕對讓球迷滿載而歸，欣賞精彩職棒賽事。
+
+【S.H.E 團體Selina蒞臨中職開幕戰擔任開球嘉賓】
+
+過去，Selina曾在拍戲期間被火燒傷，後經歷長時間辛苦治療才復原，勵志重生過程與郭泓志經歷5次手術，再次重回投手丘同樣感人，是浴火重生的典範。中職開幕戰統一獅主場賽事，特別邀請Selina擔任開球嘉賓，當天也是郭泓志中職初登版球賽，期待感人的勵志故事能夠傳達社會的溫暖。
+
+【中職開幕戰 空軍儀隊蒞臨賽前表演】
+
+&nbsp;&nbsp;&nbsp; 職棒25年中職開幕戰，迎接全新球季，職棒聯盟特別安排空軍儀隊，蒞臨新莊棒球場擔任開場表演，震撼氣勢表演，為中職開幕戰揭開序幕，也將帶給球迷不一樣的現場表演。
+
+【郭泓志初登版紀念套卡加價購活動】
+
+初登版對於職棒選手是值得慶祝迎接，擁有旅外資歷郭泓志返台初登版，也將於開幕戰隆重登場，球團特別推出郭泓志初登版紀念證件套卡，凡持當日14：00起持比賽內野門票，均可排隊加價150元現場排隊購買，每人每次排隊限購兩套，限量500套，售完為止。
+
+【郭泓志應援商品及初登版紀念商品現場販售】
+
+&nbsp;&nbsp;&nbsp; 今年度統一獅推出郭泓志應援系列商品包括T恤、運動帽、運動袖套、馬克杯、應援毛巾，將於新莊棒球場現場搶先販售。此外，當天也特別推出郭泓志初登版紀念實戰比賽球、初登板珍藏相框及實戰投球公仔開放球迷現場訂購及預購，每款商品數量有限，千萬別錯過。
+
+【獅子軍拼得分創大橘蘆筍露大放送】
+
+一場比賽勝負關鍵，誰能先馳得點是關鍵之一，為了幫球隊集氣加油，統一獅球團開幕戰週，推出，只要統一獅破蛋得分，現場球迷持當日比賽門票即可排隊兌換「統一蘆筍露」乙瓶，限量2500瓶，換完為止。
+
+【Google＋棒球連拍抓住一瞬間贈送KUO球員卡】
+
+當天14：30開放球迷進場，至Google+活動區，參加棒球連拍抓住一瞬間拍照活動，完成活動者，均可獲贈郭泓志球員卡乙張，限量200張，送完為止。
+
+【全民打棒球 2遊戲體驗送好禮】
+
+全民挺棒球，門票送：憑門票即可兌換於紅心辣椒攤位兌換《全民打棒球2 Online》遊戲虛寶「隨機球員卡30張」。
+
+全民挺棒球 打卡送虛寶：玩家只要上傳BB/BBM/BBR，任一個娃娃頭於個人FB，經工作人員確認後，即可獲得「隨機紅卡寶箱」
+
+全民挺棒球，門票抽「紫卡」：只要現場憑門票即可兌換「抽獎券」一張，於球賽中場休息時間，有機會獲得市價超過$7,500元的《全民打棒球2 Online》「隨機紫卡」一張。
+
+全民挺棒球 投真的、九宮格送虛寶：想展現精采的投球技巧，只要將球投到指定點數，即可獲得以下獎項，每人皆有一次機會，豐富大獎等待著你！
+
+獎項：9點：CPBL 10抽 ，1、2、3、4、5、6、7、8點：隨機球員卡10抽
+
+全民挺棒球 按讚送虛寶：民眾只要有加入《全民打棒球：成為總教練》粉絲團，或是於粉絲團按讚一旦確認完成後，即可獲得《全民打棒球：成為總教練》遊戲虛寶「全體選手卡20張」1組！
+
+【進場挺職棒統一獅請你品嚐新貴派巧克力】
+
+職棒開幕戰週，統一獅感謝球迷用行動支持，特別結合宏亞食品準備新貴派巧克力，讓棒球迷免費品嚐，凡當日進場持門票均可排隊兌換「新貴派巧克力」，每張門票兌換乙包，限量2500包，換完為止。
+【統一獅球場美味飲食服務】
+
+當天球賽7-ELEVEN將蒞臨新莊棒球場為球迷熱情服務，提供便當、大亨堡、飲料販售服務球迷。另外，現場21世紀風味館也特別準備美味炸雞餐點、必勝客PIZZA準備香郁美味個人PIZZA、台灣國寶香腸及美式熱狗、萊恩爆米花及萊恩霜淇淋，讓球迷享受精彩球賽，也可便利享受美味餐點。
+
+【球迷接駁公車服務】
+
+當天統一獅結合首都客運，提供捷運新埔站接駁車服務，賽前、賽後均提供接駁服務，賽前將於當日15：00時，開始，約15~20分鐘一班次，賽前最後一班次為17：30。另外，也歡迎球迷至新莊線新莊站，1號出口，沿著中華路步行至公園路左轉，再於和興街右轉，即可抵達球場周邊。
+
+&nbsp;
+
+&nbsp;
+" />
+
+
+
+<title>中華職棒大聯盟全球資訊網 The Official Site of CPBL</title>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	//$(".fancybox").fancybox();
+});
+</script>
+</head>
+<body>
+
+
+<!-- 置頂 start-->
+<!-- 主選單 start -->
+<div class="header" id="sticker">
+	<div class="w_main">
+		<!-- logo -->
+		<div class="left logo_header"><a href="/cpbl.html"><img src="http://cpbl-elta.cdn.hinet.net/web/images/logo.png" width="74" height="34" align="absmiddle" /></a></div>
+		<!-- 主選單 start -->
+		<div class="left">
+			<ul class="menu" id="menu">
+				<li id = 'menu-newes'><a href="/news/lists.html">新聞</a></li>
+				<li id = 'menu-schedule'><a href="/schedule/index.html">賽程</a></li>
+				<li id = 'menu-boxs'><a href="/games/index.html">成績看板</a></li>
+				<li id = 'menu-stadning'><a href="/standing/season.html">球隊戰績</a></li>
+				<li id = 'menu-data'><a href="#">數據統計</a></li>
+				<li id = 'menu-team'><a href="#">球隊</a></li>
+				<li id = 'menu-player'><a href="#">球員</a></li>
+				<li id = 'menu-tickets'><a href="/ticket/temp">票務</a></li>
+				<!--<li id = 'menu-tickets'><a href="/ticket/">票務</a></li>-->
+				<!-- <li id = 'menu-tickets'><a href="javascript:void(0)" style="cursor:text;">票務</a></li> -->
+				<li id = 'menu-shopping'><a href="http://www.pcstore.com.tw/shopping_cpbl/" target="_blank">商城</a></li>
+				<li id = 'menu-cpbltv'><a href="/eng/history/">Eng</a></li>
+                <li id = 'menu-museum'><a href="http://museum.cpbl.com.tw/" target="_blank">線上文物館</a></li>
+
+			</ul>
+		</div>
+		<div class="left"></div>
+		<!-- 主選單 end -->
+		<!-- 右選項 -->
+		
+		<div class="right">
+			
+			<div class="top_link_line"></div>
+   			<a id = 'menu-app' href="#" class="top_link">APP</a>
+			<div class="top_link_line"></div>
+			<a target="_blank" href="https://www.facebook.com/heartbaseball?fref=ts" class="top_link"><img id="btn_shaer_facebook" src="http://cpbl-elta.cdn.hinet.net/web/images/icon_fb.png" width="9" height="60" align="absmiddle" /></a>
+			<div class="top_link_line"></div>
+			<!--<a target="_blank" href="https://plus.google.com/+CPBL/posts" class="top_link"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_g+.png" width="22" height="60" align="absmiddle" /></a>
+			<div class="top_link_line"></div>-->
+		</div>
+		<div class="right">
+			<a href="http://www.cpbltv.com/" target="_blank"><img src="/web/images/cpbltv_logo.png" style="margin-top:12px; height:28px;"></a>
+		</div>
+		<div class="clean"></div>
+	</div>
+	<!-- w_main -->
+</div>
+<!-- header -->
+<!-- 次選單 start -->
+<!-- 數據統計↓ -->
+<ul class="submenu" id="menu-submenu" style = "z-index:100;">
+	<li><a href="/stats/special.html">記錄特別報導</a></li>
+	<li><a href="/stats/toplist.html">各項排行成績</a></li>
+</ul>
+<!-- 球隊↓ -->
+<style>.submenu2 li{width:165px}</style>
+<ul class="submenu2" id="menu-submenu2" style = "z-index:100;" >
+	<li><a href="/web/team_history.php"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_cpbl_sub.png" width="103" height="64" /><br />沿革</a></li>
+	<li><a href="/web/team_brief.php?&team=E02"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_brothers_sub.png" width="103" height="64" /><br />中信兄弟</a></li>
+	<li><a href="/web/team_brief.php?&team=L01"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_lion_sub.png" width="103" height="64" /><br />統一7-ELEVEn獅</a></li>
+	<li><a href="/web/team_brief.php?&team=AJL011"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_rakuten_sub_0226.png" width="64" height="64" /><br />Rakuten Monkeys</a></li>
+	<li><a href="/web/team_brief.php?&team=B04"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_Guardians_sub.png" width="103" height="64" /><br />富邦悍將</a></li>
+	<li><a href="/web/team_brief.php?&team=D01"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_dragon_sub.png" width="103" height="64" /><br />味全龍</a></li>
+</ul>
+<!-- 球員↓ -->
+<ul class="submenu3" id="menu-submenu3" style = "z-index:100;">
+	<li><a href="/players.html">球員點將錄</a></li>
+	<li><a href="/players/change.html">球員異動</a></li>
+</ul>
+
+<!-- APP↓ -->
+<ul class="submenu4" id="menu-submenu4" style="z-index:100;">
+  <li><a href="#"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_app_ios.png" width="117" /><br />iOS</a></li>
+  <li><a href="#"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_app_android.png" width="117" /><br />Andorid</a></li>
+</ul>
+
+<!-- shop↓ -->
+<ul class="submenu2" id="menu-submenu5" style="z-index:100;">
+  <li style="margin-left: 45px;"><a href="https://www.pcstore.com.tw/shopping_cpbl/" target="_blank">
+  	<div>
+  	<img src="http://cpbl-elta.cdn.hinet.net/web/images/20190322/3.png" width="180" height="" style="margin-top:25px" />
+  	</div><br />PChome商店街<br />中華職棒購物中心</a>
+  </li>
+  <!--<li><a href="https://www.pcone.com.tw/store/1242815?t=brand#ref=d_brand" target="_blank">
+  	<div>
+  	<img src="http://cpbl-elta.cdn.hinet.net/web/images/20190322/1.png" width="200" height="100" />
+  	</div><br />松果購物<br />中華職棒聯名獨家商店</a>
+  </li>-->
+  <li><a href="https://shopee.tw/cpblshop" target="_blank">
+  	<div>
+  	<img src="http://cpbl-elta.cdn.hinet.net/web/images/20190322/2.png" width="200" height="100" />
+  	</div><br />蝦皮購物<br />中華職棒官方旗艦店</a>
+  </li>
+</ul>
+<style type="text/css">
+	#menu-submenu5 div{
+		background-color: #ffffff;
+	    display: inline-block;
+		min-height: 100px;
+		width:200px;
+	}
+	#menu-submenu5 li{
+		width:45%;
+	}
+</style>
+
+<!-- 次選單 end -->
+
+
+<script type="text/javascript">
+
+	var msubmenu = msubmenu2 = msubmenu3 = false ;
+	var menu_opened = false;
+	var menus = ['#menu-newes', '#menu-schedule', '#menu-boxs', '#menu-stadning',  '#menu-tickets', '#menu-shopping', '#menu-cpbltv'];
+	
+	
+	
+	$.each(menus, function(key, data){
+		
+		$(data).hover(function(){
+			$("#menu-submenu").css('display', 'none');
+			$("#menu-submenu2").css('display', 'none');
+			$("#menu-submenu3").css('display', 'none');
+			$("#menu-submenu4").css('display', 'none');
+			$("#menu-submenu5").css('display', 'none');
+		});
+	});
+
+
+	$('#menu-data').hover(function(){		
+		$("#menu-submenu").css('display', 'block');
+		$("#menu-submenu2").css('display', 'none');
+		$("#menu-submenu3").css('display', 'none');
+		$("#menu-submenu4").css('display', 'none');
+			$("#menu-submenu5").css('display', 'none');
+		},
+		 function(){
+			 $('#menu-submenu').hover(function(){
+				 $("#menu-submenu").css('display', 'block'); 
+			 }, function(){
+				 $("#menu-submenu").css('display', 'none');			 
+			 });
+		}
+	);
+	
+	$('#menu-team').hover(function(){		
+		$("#menu-submenu2").css('display', 'block');
+		$("#menu-submenu").css('display', 'none');
+		$("#menu-submenu3").css('display', 'none');
+		$("#menu-submenu4").css('display', 'none');
+		$("#menu-submenu5").css('display', 'none');
+		},
+		 function(){
+			 $('#menu-submenu2').hover(function(){
+				 $("#menu-submenu2").css('display', 'block'); 
+			 }, function(){
+				 $("#menu-submenu2").css('display', 'none');			 
+			 });
+		}
+	);
+	
+	
+	$('#menu-player').hover(function(){		
+		$("#menu-submenu3").css('display', 'block');
+		$("#menu-submenu").css('display', 'none');
+		$("#menu-submenu2").css('display', 'none');
+		$("#menu-submenu4").css('display', 'none');
+		$("#menu-submenu5").css('display', 'none');
+		},
+		 function(){
+			 $('#menu-submenu3').hover(function(){
+				 $("#menu-submenu3").css('display', 'block'); 
+			 }, function(){
+				 $("#menu-submenu3").css('display', 'none');			 
+			 });
+		}
+	);
+	
+	$('#menu-app').hover(function(){		
+		$("#menu-submenu4").css('display', 'block');
+		$("#menu-submenu").css('display', 'none');
+		$("#menu-submenu2").css('display', 'none');
+		$("#menu-submenu3").css('display', 'none');
+		$("#menu-submenu5").css('display', 'none');
+		},
+		 function(){
+			 $('#menu-submenu4').hover(function(){
+				 $("#menu-submenu4").css('display', 'block'); 
+			 }, function(){
+				 $("#menu-submenu4").css('display', 'none');			 
+			 });
+		}
+	);
+	
+	$('#menu-shopping').hover(function(){		
+		$("#menu-submenu5").css('display', 'block');
+		$("#menu-submenu").css('display', 'none');
+		$("#menu-submenu2").css('display', 'none');
+		$("#menu-submenu3").css('display', 'none');
+		$("#menu-submenu4").css('display', 'none');
+		},
+		 function(){
+			 $('#menu-submenu5').hover(function(){
+				 $("#menu-submenu5").css('display', 'block'); 
+			 }, function(){
+				 $("#menu-submenu5").css('display', 'none');			 
+			 });
+		}
+	);
+	
+	
+	$("#sticker").sticky({ topSpacing: 0, center:true, className:"hey" });
+	
+	$(document).ready(function(){
+		//$('#menu-tickets a').removeAttr('href');
+	});
+</script>
+<!-- google 春聯AD start -->
+<div class="gg_ad_l"><!--600x100-->
+<!---->
+<!-- <a href="http://www.cpblallstar.com/" target="_blank"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_banner_20170426.jpg" /></a> -->
+
+<!--728x90-->
+<!---->
+<!--r1-->
+<div align="center" style="margin: 0 auto;">
+
+<!--首頁中間-->  
+ 
+
+	<!-- /71024502/cpbl_allsite_160600_1 -->
+
+            <div id='div-gpt-ad-1459139503845-2'>
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459139503845-2'); });
+        </script>
+        </div>
+    
+    
+
+</div></div>
+<div class="gg_ad_r"><!--600x100-->
+<!---->
+<!-- <a href="http://www.cpblallstar.com/" target="_blank"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_banner_20170426.jpg" /></a> -->
+
+<!--728x90-->
+<!---->
+<!--r2-->
+<div align="center" style="margin: 0 auto;">
+
+<!--首頁中間-->  
+ 
+
+	<!-- /71024502/cpbl_allsite_160600_2 -->
+            <div id='div-gpt-ad-1459139503845-3'>
+        <script type='text/javascript'>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459139503845-3'); });
+        </script>
+        </div>
+    
+
+
+    
+<!--數據統計上方 || 成績看板上方 || 球員異動上方-->
+
+</div></div>
+<!-- google 春聯AD end -->
+
+
+<!-- 置頂 end-->
+<div class="cont_bk">
+	<!-- 整頁底圖在此元素內 -->
+	<div class="cont">
+		<div class="cont_single">
+			
+            <!-- AD 728x90 -->
+            <div class="gap_b20 align_c">
+            <!--<a href="#"><img src="http://placehold.it/728x90/" /></a>-->
+            </div>
+            
+			<!-- 大標 start-->
+			<h1>NEWS <span>新聞</span></h1>
+			<!-- 大標 end-->
+			
+            <!-- 新聞 start -->
+			<div> <!--class="games_news_pic gap_b20"-->
+				<img src=""  />
+			</div>
+			<div class="news_title">
+				<span>2014.03.13</span><br />
+				3/22中職開幕戰統一獅新莊棒球場 棒球嘉年華邀請您一起來同樂
+				<!-- start tags -->
+				<div class="news_tag">
+								</div>
+				<!-- end tags	-->
+				<div class="news_share">
+					<a target="_blank" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u='+window.location.toString() );return false;" class="gap_r10"><img src="http://cpbl-elta.cdn.hinet.net/web/images/share_icon_f.png" width="22" height="22" /></a>
+					<a target="_blank" onclick="window.open('https://plus.google.com/share?url='+window.location.toString() );return false;" class="gap_r10"><img src="http://cpbl-elta.cdn.hinet.net/web/images/share_icon_g.png" width="22" height="22" /></a>
+					<!--<a href="#" class="gap_r10"><img src="http://cpbl-elta.cdn.hinet.net/web/images/share_icon_l.png" width="22" height="22" /></a>-->
+					<a target="_blank" onclick="window.open('http://twitter.com/home/?status='+window.location.toString() );return false;" class="gap_r10"><img src="http://cpbl-elta.cdn.hinet.net/web/images/share_icon_t.png" width="22" height="22" /></a>
+				</div>
+			</div>
+			<div class="cont_txt_line_height">
+				<p>職棒25年中華職棒開幕戰，下週六(3/22)於新北市新莊棒球場熱鬧登場，將由統一獅擔任主場球隊迎戰義大犀牛。迎接中職開幕戰盛會，統一獅賽前也舉辦一系列熱鬧活動，邀請球迷朋友一起來共襄盛舉，享受歡樂棒球。</p>
+
+<p>統一獅為了提供球迷多元賞球樂趣，推出一系列吃喝玩樂活動盡在新莊棒球場，絕對讓球迷滿載而歸，欣賞精彩職棒賽事。</p>
+
+<p><span style="font-size:14px"><span style="color:#FF0000"><strong>【S.H.E 團體Selina蒞臨中職開幕戰擔任開球嘉賓】</strong></span></span></p>
+
+<p>過去，Selina曾在拍戲期間被火燒傷，後經歷長時間辛苦治療才復原，勵志重生過程與郭泓志經歷5次手術，再次重回投手丘同樣感人，是浴火重生的典範。中職開幕戰統一獅主場賽事，特別邀請Selina擔任開球嘉賓，當天也是郭泓志中職初登版球賽，期待感人的勵志故事能夠傳達社會的溫暖。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【中職開幕戰 空軍儀隊蒞臨賽前表演】</strong></span></span></p>
+
+<p>&nbsp;&nbsp;&nbsp; 職棒25年中職開幕戰，迎接全新球季，職棒聯盟特別安排空軍儀隊，蒞臨新莊棒球場擔任開場表演，震撼氣勢表演，為中職開幕戰揭開序幕，也將帶給球迷不一樣的現場表演。</p>
+
+<p><span style="font-size:14px"><span style="color:#FF0000"><strong>【郭泓志初登版紀念套卡加價購活動】</strong></span></span></p>
+
+<p>初登版對於職棒選手是值得慶祝迎接，擁有旅外資歷郭泓志返台初登版，也將於開幕戰隆重登場，球團特別推出郭泓志初登版紀念證件套卡，凡持當日14：00起持比賽內野門票，均可排隊加價150元現場排隊購買，每人每次排隊限購兩套，限量500套，售完為止。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【郭泓志應援商品及初登版紀念商品現場販售】</strong></span></span></p>
+
+<p>&nbsp;&nbsp;&nbsp; 今年度統一獅推出郭泓志應援系列商品包括T恤、運動帽、運動袖套、馬克杯、應援毛巾，將於新莊棒球場現場搶先販售。此外，當天也特別推出郭泓志初登版紀念實戰比賽球、初登板珍藏相框及實戰投球公仔開放球迷現場訂購及預購，每款商品數量有限，千萬別錯過。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【獅子軍拼得分創大橘蘆筍露大放送】</strong></span></span></p>
+
+<p>一場比賽勝負關鍵，誰能先馳得點是關鍵之一，為了幫球隊集氣加油，統一獅球團開幕戰週，推出，只要統一獅破蛋得分，現場球迷持當日比賽門票即可排隊兌換「統一蘆筍露」乙瓶，限量2500瓶，換完為止。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【Google＋棒球連拍抓住一瞬間贈送KUO球員卡】</strong></span></span></p>
+
+<p>當天14：30開放球迷進場，至Google+活動區，參加棒球連拍抓住一瞬間拍照活動，完成活動者，均可獲贈郭泓志球員卡乙張，限量200張，送完為止。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【全民打棒球 2遊戲體驗送好禮】</strong></span></span></p>
+
+<p><strong><u>全民挺棒球，門票送：</u></strong>憑門票即可兌換於紅心辣椒攤位兌換《全民打棒球2 Online》遊戲虛寶「隨機球員卡30張」。</p>
+
+<p><strong><u>全民挺棒球 打卡送虛寶：</u></strong>玩家只要上傳BB/BBM/BBR，任一個娃娃頭於個人FB，經工作人員確認後，即可獲得「隨機紅卡寶箱」</p>
+
+<p><strong><u>全民挺棒球，門票抽「紫卡」：</u></strong>只要現場憑門票即可兌換「抽獎券」一張，於球賽中場休息時間，有機會獲得市價超過$7,500元的《全民打棒球2 Online》「隨機紫卡」一張。</p>
+
+<p><strong><u>全民挺棒球 投真的、九宮格送虛寶：</u></strong>想展現精采的投球技巧，只要將球投到指定點數，即可獲得以下獎項，每人皆有一次機會，豐富大獎等待著你！</p>
+
+<p>獎項：9點：CPBL 10抽 ，1、2、3、4、5、6、7、8點：隨機球員卡10抽</p>
+
+<p><strong><u>全民挺棒球 按讚送虛寶：</u></strong>民眾只要有加入《全民打棒球：成為總教練》粉絲團，或是於粉絲團按讚一旦確認完成後，即可獲得《全民打棒球：成為總教練》遊戲虛寶「全體選手卡20張」1組！</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【進場挺職棒統一獅請你品嚐新貴派巧克力】</strong></span></span></p>
+
+<p>職棒開幕戰週，統一獅感謝球迷用行動支持，特別結合宏亞食品準備新貴派巧克力，讓棒球迷免費品嚐，凡當日進場持門票均可排隊兌換「新貴派巧克力」，每張門票兌換乙包，限量2500包，換完為止。<br />
+<span style="color:#FF0000"><span style="font-size:14px"><strong>【統一獅球場美味飲食服務】</strong></span></span></p>
+
+<p>當天球賽7-ELEVEN將蒞臨新莊棒球場為球迷熱情服務，提供便當、大亨堡、飲料販售服務球迷。另外，現場21世紀風味館也特別準備美味炸雞餐點、必勝客PIZZA準備香郁美味個人PIZZA、台灣國寶香腸及美式熱狗、萊恩爆米花及萊恩霜淇淋，讓球迷享受精彩球賽，也可便利享受美味餐點。</p>
+
+<p><span style="color:#FF0000"><span style="font-size:14px"><strong>【球迷接駁公車服務】</strong></span></span></p>
+
+<p>當天統一獅結合首都客運，提供捷運新埔站接駁車服務，賽前、賽後均提供接駁服務，賽前將於當日15：00時，開始，約15~20分鐘一班次，賽前最後一班次為17：30。另外，也歡迎球迷至新莊線新莊站，1號出口，沿著中華路步行至公園路左轉，再於和興街右轉，即可抵達球場周邊。</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+			</div>
+			<!-- cont_txt_line_height -->
+            
+            <!--AD-->
+            <div class="jump">
+				<div class="left"><!--600x100-->
+<!---->
+<!-- <a href="http://www.cpblallstar.com/" target="_blank"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_banner_20170426.jpg" /></a> -->
+
+<!--728x90-->
+<!---->
+<!--news_content_1-->
+<div align="center" style="margin: 0 auto;">
+
+<!--首頁中間-->  
+  
+ 
+    <!-- /71024502/cpbl_news_content_336280_1 -->
+    <div id='div-gpt-ad-1459139503845-4'>
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459139503845-4'); });
+    </script>
+    </div>
+
+
+</div></div>
+				<div class="right"><!--600x100-->
+<!---->
+<!-- <a href="http://www.cpblallstar.com/" target="_blank"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_banner_20170426.jpg" /></a> -->
+
+<!--728x90-->
+<!---->
+<!--news_content_2-->
+<div align="center" style="margin: 0 auto;">
+
+<!--首頁中間-->  
+   
+
+
+    <!-- /71024502/cpbl_news_content_336280_2 -->
+    <div id='div-gpt-ad-1459139503845-5'>
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1459139503845-5'); });
+    </script>
+    </div>
+    
+
+</div></div>
+				<div class="clean"></div>
+			</div>
+            
+			<!-- 上下則切換 start -->
+			<div class="jump">
+												<div class="right"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_arrow4_right.png" width="22" height="22" /></div>
+				<div class="jump_news_note right">下一則</div>
+				<!--<a href="/news/view/11632.html?&news=11632&prev_id=11420&next_id=&news_id=11632" class="jump_news right">正田樹回神好投　單週全猿主場全勝</a>-->
+				<a href="/news/view/11632.html?&news=11632&news_id=11632" class="jump_news right">正田樹回神好投　單週全猿主場全勝</a>
+								<div class="clean"></div>
+			</div><!-- jump -->
+            <!-- 上下則切換 end -->
+			<!-- 新聞 end -->
+            
+            <!-- AD 728x90 -->
+            <div class="gap_b20 align_c"><!--600x100-->
+<!---->
+<!-- <a href="http://www.cpblallstar.com/" target="_blank"><img src="http://cpbl-elta.cdn.hinet.net/web/images/cpbl_banner_20170426.jpg" /></a> -->
+
+<!--728x90-->
+<!---->
+<!--news_AdSense_2-->
+<div align="center" style="margin: 0 auto;">
+
+<!--首頁中間-->  
+ 
+ 
+    <!--20161020 要求更換-->
+	<script type="text/javascript">
+	(function() {
+
+		var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.charset = "utf-8"; pa.async = true;
+		pa.src = window.location.protocol + "//api.popin.cc/searchbox/cpbl.js";
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+	})(); 
+	</script>
+
+    <div id="_popIn_recommend"></div>
+       
+
+</div></div>
+			
+		</div><!-- cont_single -->
+	</div><!-- cont -->
+</div><!-- cont_bk -->
+
+<!-- footer start -->
+<!-- footer start -->
+<div class="footer">
+  <div class="footer_cont">
+  
+  <div class="footer_logo"><a href="/cpbl/index/"><img src="http://cpbl-elta.cdn.hinet.net/web/images/logo.png" width="74" height="34" align="absmiddle" /></a></div>
+  <div class="footer_line"></div>
+  <div class="footer_team">
+    <a href="/web/team_brief.php?&team=E02"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_brothers2.png" width="38" height="30" align="absmiddle" /></a>
+    <a href="/web/team_brief.php?&team=L01"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_lion2.png" width="38" height="30" align="absmiddle" /></a>
+    <a href="/web/team_brief.php?&team=AJL011"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_rakuten2.png" width="30" height="30" align="absmiddle" /></a>
+    <a href="/web/team_brief.php?&team=B04"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_Guardians.png" width="33" height="28" align="absmiddle" /></a>
+    <a href="/web/team_brief.php?&team=D01"><img src="http://cpbl-elta.cdn.hinet.net/web/images/icon_dragon.png" width="28" height="28" align="absmiddle" /></a>
+  </div>
+  <div class="footer_line"></div>
+  <div class="footer_nav">
+    <a href="/footer/about/" class="footer_link">關於中職</a>
+    <a href="/footer/stadium/" class="footer_link">球場介紹</a>
+    <a href="/footer/rule/" class="footer_link">棒球規則</a>
+    <a href="/footer/contact/" class="footer_link">聯絡我們</a>
+    <a href="/footer/sitemap/" class="footer_link">網站導覽</a>
+    <a href="/eng/history/" class="footer_link">Eng</a>
+    <a href="http://winter.cpbl.com.tw/" target="_blank" class="footer_link">冬季聯盟</a>
+  </div>
+  
+  </div><!-- footer_cont -->
+  <div class="copyright">Copyright &copy;2015 Chinese Professional Baseball League.All rights reserved.</div>
+</div><!-- footer -->
+<!-- footer end -->
+
+<script>
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-48754261-1', 'cpbl.com.tw');
+	ga('send', 'pageview');
+	
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56Z9JC');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56Z9JC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- footer end -->
+
+</body>
+</html>
